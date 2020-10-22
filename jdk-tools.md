@@ -85,7 +85,7 @@ Definitions:
 
 知道 JVM 进程的 PID 之后，就可以使用其他工具来进行诊断了。
 
-### jstat 工具简介
+### jstat
 
 jstat 用来监控 JVM 内置的各种统计信息，主要是内存和 GC 相关的信息。
 
@@ -220,7 +220,7 @@ jstat -gc -t -h 10 864 1s 15
 
 在没有其他监控工具的情况下， jstat 可以简单查看各个内存池和 GC 的信息，可用于判别是否是 GC 问题或者内存溢出。
 
-### jmap 工具
+### jmap
 
 面试最常问的就是 jmap 工具了。jmap 主要用来 Dump 堆内存。当然也支持输出统计信息。
 
@@ -358,7 +358,7 @@ jmap -dump:format=b,file=3826.hprof 3826
 
 分析 hprof 文件可以使用 jhat 或者 [mat](https://www.eclipse.org/mat/) 工具。
 
-### jcmd 工具
+### jcmd
 
 诊断工具：jcmd 是 JDK 8 推出的一款本地诊断工具，只支持连接本机上同一个用户空间下的 JVM 进程。
 
@@ -497,7 +497,7 @@ jcmd 坑的地方在于，必须指定绝对路径，否则导出的 hprof 文�
 
 其他命令用法类似，必要时请参考官方文档。
 
-### jstack 工具
+### jstack
 
 命令行工具、诊断工具：jstack 工具可以打印出 Java 线程的调用栈信息（Stack Trace）。一般用来查看存在哪些线程，诊断是否存在死锁等。
 
@@ -542,7 +542,7 @@ jstack -l 4524
 
 在 Linux 和 macOS 上，`jstack pid` 的效果跟 `kill -3 pid` 相同。
 
-### jinfo 工具
+### jinfo
 
 诊断工具：jinfo 用来查看具体生效的配置信息以及系统属性，还支持动态增加一部分参数。
 
@@ -621,7 +621,7 @@ Error attaching to process:
     Supported versions are 25.74-b02. Target VM is 25.66-b17
 ```
 
-### jrunscript 和 jjs 工具
+### jrunscript
 
 jrunscript 和 jjs 工具用来执行脚本，只要安装了 JDK 8+，就可以像 shell 命令一样执行相关的操作了。这两个工具背后，都是 JDK 8 自带的 JavaScript 引擎 Nashorn。
 
