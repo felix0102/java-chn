@@ -193,8 +193,7 @@ Metaspace，元数据区总计使用了 3449K，容量是 4494K，JVM 保证可�
 
 ```shell
 # 请注意命令行启动时没有换行，此处是手工排版
-java -Xloggc:gc.demo.log -XX:+PrintGCDetails
- demo.jvm0204.GCLogAnalysis
+java -Xloggc:gc.demo.log -XX:+PrintGCDetails demo.jvm0204.GCLogAnalysis
 ```
 
 > **提示**：从 JDK 8 开始，支持使用 `%p`、`%t` 等占位符来指定 GC 输出文件，分别表示进程 pid 和启动时间戳。
