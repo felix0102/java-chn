@@ -120,48 +120,7 @@
 		-XX:-TraceLoaderConstraints	跟踪类加载器约束的相关信息
 		```
 
-- 示例:
-	- 示例1:
-	```
-	/Library/Java/JavaVirtualMachines/adoptopenjdk-10.jdk/Contents/Home/bin/java 
-	-Xlog:gc* 
-	"-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=63977
-	:/Applications/IntelliJ IDEA.app/Contents/bin" 
-	-Dfile.encoding=UTF-8 
-	-classpath /Users/apple/code/github/job/jvm/target/test-classes:/Users/apple/code/github/job/jvm/target/classes
-	:/Users/apple/.m2/repository/org/openjdk/jol/jol-core/0.10/jol-core-0.10.jar
-	:/Users/apple/.m2/repository/junit/junit/4.12/junit-4.12.jar
-	:/Users/apple/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar 
-	com.kevin.job.jvm.gc.SlotTest
-	```
 
-### idea运行虚拟机参数配置
-- 说明: idea启动默认使用idea的虚拟机参数配置或者程序运行的虚拟机参数设置
-- idea全局参数配置
-	- 路径: Help -> Edit Custom VM Options
-	- 文件idea.vmoptions就是idea全局配置虚拟机参数文件
-	- 文件idea.vmoptions的磁盘地址: 
-		- /Users/apple/Library/Preferences/IntelliJIdea2018.3/idea.vmoptions 用户层级
-		- /Applications/IntelliJ IDEA.app/Contents/bin/idea.vmoptions 系统层级
-	- 文件内容参数解析:
-	```
-	-Xms128m
-	-Xmx1000m
-	-XX:ReservedCodeCacheSize=240m
-	-XX:+UseCompressedOops
-	-Dfile.encoding=UTF-8
-	-XX:+UseConcMarkSweepGC
-	-XX:SoftRefLRUPolicyMSPerMB=50
-	-ea
-	-Dsun.io.useCanonCaches=false
-	-Djava.net.preferIPv4Stack=true
-	-Djdk.http.auth.tunneling.disabledSchemes=""
-	-XX:+HeapDumpOnOutOfMemoryError
-	-XX:-OmitStackTraceInFastThrow
-	-Xverify:none
-	-XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
-	-XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
-	```
 
 
 	参数名称      											|说明
@@ -184,8 +143,6 @@
 	-XX:HeapDumpPath=$USER_HOME<br>/java_error_in_idea.hprof|
 
 
-- idea程序运行时配置(Edit Configuration菜单):
-![idea edit configuration](https://raw.githubusercontent.com/kevinvoid/blog-image-repo/master/2020/idea-edit_congfiguration.png)
 
 
 ### 说明:
